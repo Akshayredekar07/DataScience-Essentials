@@ -39,6 +39,75 @@
 
 ---
 
+### To Prove:
+If a point **x** lies on the plane  
+$$
+\pi_d: \mathbf{w}^\top \mathbf{x} = 0
+$$  
+then **x is perpendicular to w**, i.e., the **angle θ between x and w is 90°**, so $ \cos(\theta) = 0 $.
+
+---
+
+### Let:
+- **w**: normal vector to the plane $ \pi_d $  
+- Plane passes through the **origin**  
+- **x**: any vector in the plane  
+- Plane equation: $ \mathbf{w}^\top \mathbf{x} = 0 $  
+⇒ This implies the **dot product** $ \mathbf{w} \cdot \mathbf{x} = 0 $
+
+---
+
+### Dot Product Formula:
+$$
+\mathbf{w}^\top \mathbf{x} = ||\mathbf{w}|| \cdot ||\mathbf{x}|| \cdot \cos(\theta)
+$$
+
+Where:
+- $ ||\mathbf{w}|| $: magnitude of **w**  
+- $ ||\mathbf{x}|| $: magnitude of **x**  
+- $ \theta $: angle between **w** and **x**
+
+---
+
+### Given:
+$$
+\mathbf{w}^\top \mathbf{x} = 0 \Rightarrow ||\mathbf{w}|| \cdot ||\mathbf{x}|| \cdot \cos(\theta) = 0
+$$
+
+Now,
+- $ ||\mathbf{w}|| \ne 0 $ (valid normal vector)  
+- $ ||\mathbf{x}|| \ne 0 $ (non-zero vector in plane)  
+⇒ So, the only possibility:
+$$
+\cos(\theta) = 0 \Rightarrow \theta = 90^\circ
+\Rightarrow \mathbf{w} \perp \mathbf{x}
+$$
+
+---
+
+### Conclusion:
+Every vector **x** lying on the plane $ \pi_d $ is perpendicular to the normal vector **w**.
+
+$$
+\boxed{
+\mathbf{x} \in \pi_d \text{ and } \pi_d: \mathbf{w}^\top \mathbf{x} = 0 \Rightarrow \mathbf{x} \perp \mathbf{w}
+}
+$$
+
+> The plane $ \pi_d $ defined by $ \mathbf{w}^\top \mathbf{x} = 0 $ contains all points **x** that are orthogonal to **w**.
+
+---
+
+### General Dot Product Interpretation:
+For any vectors $ \mathbf{a} $ and $ \mathbf{b} $:
+$$
+\mathbf{a}^\top \mathbf{b} = \sum_{i=1}^{n} a_i b_i = ||\mathbf{a}|| \cdot ||\mathbf{b}|| \cdot \cos(\theta)
+$$
+
+If $ \mathbf{a}^\top \mathbf{b} = 0 \Rightarrow \cos(\theta) = 0 \Rightarrow \theta = 90^\circ \Rightarrow \mathbf{a} \perp \mathbf{b} $
+
+---
+
 ## 🔹 2. **Understanding Hyperplanes in ML**
 
 ### 📐 2.1 Definition of Hyperplane
@@ -159,3 +228,73 @@ $$
 | Distance to hyperplane  | Used in SVM to define **margin** and **confidence**                     |
 
 ---
+
+### 🟡 Plane through Origin
+
+Given plane:  
+$$
+\pi_d: \mathbf{w}^\top \mathbf{x} + w_0 = 0
+$$
+
+For **plane through origin**,  
+$$
+w_0 = 0 \Rightarrow \pi_d: \mathbf{w}^\top \mathbf{x} = 0
+$$
+
+---
+
+### 🟢 Every $ \mathbf{x} $ on $ \pi_d $ satisfies:  
+$$
+\mathbf{w}^\top \mathbf{x} = 0
+\Rightarrow \text{Dot product of } \mathbf{w} \text{ and } \mathbf{x} \text{ is zero}
+\Rightarrow \mathbf{w} \perp \mathbf{x}
+$$
+
+---
+
+### 🔴 Geometrical Insight:
+Let $ \theta $ be the angle between $ \mathbf{w} $ and $ \mathbf{x} $, then:  
+$$
+\mathbf{w}^\top \mathbf{x} = ||\mathbf{w}|| \cdot ||\mathbf{x}|| \cdot \cos(\theta)
+\Rightarrow 0 = ||\mathbf{w}|| \cdot ||\mathbf{x}|| \cdot \cos(\theta)
+\Rightarrow \cos(\theta) = 0
+\Rightarrow \theta = 90^\circ
+$$
+
+---
+
+### 🧠 Vector Form:
+$$
+\mathbf{w} = 
+\begin{bmatrix}
+w_1 \\
+w_2 \\
+\vdots \\
+w_d
+\end{bmatrix},
+\quad
+\mathbf{x} = 
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_d
+\end{bmatrix}
+\Rightarrow 
+\mathbf{w}^\top \mathbf{x} = \sum_{i=1}^d w_i x_i = 0
+$$
+
+---
+
+### 📌 Final Conclusion:
+All points $ \mathbf{x} \in \pi_d $ satisfy:  
+$$
+\boxed{
+\mathbf{w}^\top \mathbf{x} = 0 \Rightarrow \mathbf{w} \perp \mathbf{x}
+}
+$$
+
+> ✅ Any vector **in the plane** is **orthogonal** to the normal vector **w**.
+
+---
+
