@@ -1,0 +1,921 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{geometry} % Added for margin control
+\usepackage{fancyhdr} % Added for page number control
+
+% Set smaller margins (e.g., 1 inch on all sides; adjust as needed)
+\geometry{
+    left=0.8in,
+    right=0.8in,
+    top=0.8in,
+    bottom=0.8in
+}
+
+% Configure page style for page number at bottom center
+\pagestyle{fancy}
+\fancyhf{} % Clear default headers and footers
+\fancyfoot[C]{\thepage} % Place page number at bottom center
+\renewcommand{\headrulewidth}{0pt} % Remove header line
+\renewcommand{\footrulewidth}{0pt} % Remove footer line
+
+\begin{document}
+
+\section*{Measures of Central Tendency}
+
+Measures of central tendency describe the center or typical value of a dataset, summarizing the data with a single representative value. We will explore the \textbf{Mean (Arithmetic Average)}, \textbf{Median}, and \textbf{Mode}'
+
+\section{Mean (Arithmetic Average)}
+
+The mean is a measure of central tendency that represents the average of a dataset. It is calculated by summing all the data values and dividing by the number of values. The mean is sensitive to outliers but provides a comprehensive summary of the data by considering all values.
+
+\subsection*{Formula for the Mean}
+
+\begin{itemize}
+    \item \textbf{Ungrouped Data}:
+    \[
+    \text{Mean} \, (\mu \text{ or } \bar{x}) = \frac{\sum_{i=1}^{n}x_i}{n}
+    \]
+    where $x_i$ are the individual data values, and $n$ is the number of data points.
+
+    \item \textbf{Grouped Data}:
+    \[
+    \text{Mean} \, (\bar{x}) = \frac{\sum_{i=1}^{k}f_i x_i}{\sum_{i=1}^{k}f_i}
+    \]
+    where:
+    \begin{itemize}
+        \item $x_i$ is the midpoint of the $i$-th class interval,
+        \item $f_i$ is the frequency of the $i$-th class interval,
+        \item $k$ is the number of class intervals,
+        \item $\sum f_i$ is the total frequency (total number of observations).
+    \end{itemize}
+\end{itemize}
+
+\subsection{Mean for Ungrouped Data}
+
+Ungrouped data consists of individual data points that are not organized into intervals or classes. Each value is listed separately, and we calculate the mean directly from these values.
+
+\subsubsection*{Formula (Repeated for Clarity):}
+\[
+\text{Mean} \, (\bar{x}) = \frac{\sum_{i=1}^{n}x_i}{n}
+\]
+
+\subsubsection*{Example 1: Simple Ungrouped Data}
+\textbf{Dataset}: Test scores of 5 students: 85, 90, 75, 95, 80
+
+\textbf{Step 1}: List the data values.
+\begin{itemize}
+    \item $x_i$: 85, 90, 75, 95, 80
+    \item Number of values ($n$) = 5
+\end{itemize}
+
+\textbf{Step 2}: Sum the data values ($\sum x_i$).
+\[
+\sum x_i = 85 + 90 + 75 + 95 + 80 = 425
+\]
+
+\textbf{Step 3}: Divide the sum by the number of values.
+\[
+\text{Mean} \, (\bar{x}) = \frac{\sum x_i}{n} = \frac{425}{5} = 85
+\]
+
+\textbf{Result}: The mean test score is 85.
+
+\subsubsection*{Example 2: Ungrouped Data with Repeated Values}
+\textbf{Dataset}: Number of books read by 8 students in a month: 2, 3, 2, 5, 4, 3, 2, 6
+
+\textbf{Step 1}: List the data values.
+\begin{itemize}
+    \item $x_i$: 2, 3, 2, 5, 4, 3, 2, 6
+    \item Number of values ($n$) = 8
+\end{itemize}
+
+\textbf{Step 2}: Sum the data values ($\sum x_i$).
+\[
+\sum x_i = 2 + 3 + 2 + 5 + 4 + 3 + 2 + 6 = 27
+\]
+
+\textbf{Step 3}: Divide the sum by the number of values.
+\[
+\text{Mean} \, (\bar{x}) = \frac{\sum x_i}{n} = \frac{27}{8} = 3.375
+\]
+
+\textbf{Result}: The mean number of books read is 3.375 (or approximately 3.38).
+
+\subsection{Mean for Grouped Data}
+
+Grouped data is organized into class intervals, often with corresponding frequencies. This is common when dealing with large datasets or continuous data (e.g., heights, weights, or test scores). To calculate the mean, we use the midpoints of the class intervals and their frequencies.
+
+\subsubsection*{Formula (Repeated for Clarity):}
+\[
+\text{Mean} \, (\bar{x}) = \frac{\sum_{i=1}^{k}f_i x_i}{\sum_{i=1}^{k}f_i}
+\]
+
+\subsubsection*{Steps for Calculation:}
+\begin{enumerate}
+    \item Identify the class intervals and their frequencies ($f_i$).
+    \item Calculate the midpoint ($x_i$) of each class interval.
+    \[
+    \text{Midpoint} = \frac{\text{Lower Limit} + \text{Upper Limit}}{2}
+    \]
+    \item Multiply each midpoint by its frequency ($f_i x_i$).
+    \item Sum the products ($\sum f_i x_i$).
+    \item Sum the frequencies ($\sum f_i$).
+    \item Divide the sum of the products by the total frequency.
+\end{enumerate}
+
+\subsubsection*{Example 1: Grouped Data (Test Scores)}
+\textbf{Dataset}: The following table shows the test scores of 50 students, grouped into intervals.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Class Interval} & \textbf{Frequency} ($f_i$) \\
+\hline
+50--60 & 5 \\
+60--70 & 10 \\
+70--80 & 15 \\
+80--90 & 12 \\
+90--100 & 8 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Step 1}: Calculate the midpoint ($x_i$) for each class interval.
+\begin{itemize}
+    \item 50--60: $x_1 = \frac{50 + 60}{2} = 55$
+    \item 60--70: $x_2 = \frac{60 + 70}{2} = 65$
+    \item 70--80: $x_3 = \frac{70 + 80}{2} = 75$
+    \item 80--90: $x_4 = \frac{80 + 90}{2} = 85$
+    \item 90--100: $x_5 = \frac{90 + 100}{2} = 95$
+\end{itemize}
+
+\textbf{Step 2}: Multiply each midpoint by its frequency ($f_i x_i$) and sum the frequencies.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Class Interval} & \textbf{Frequency} ($f_i$) & \textbf{Midpoint} ($x_i$) & $f_i x_i$ \\
+\hline
+50--60 & 5 & 55 & $5 \times 55 = 275$ \\
+60--70 & 10 & 65 & $10 \times 65 = 650$ \\
+70--80 & 15 & 75 & $15 \times 75 = 1125$ \\
+80--90 & 12 & 85 & $12 \times 85 = 1020$ \\
+90--100 & 8 & 95 & $8 \times 95 = 760$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item Total frequency ($\sum f_i$) = $5 + 10 + 15 + 12 + 8 = 50$
+    \item Sum of products ($\sum f_i x_i$) = $275 + 650 + 1125 + 1020 + 760 = 3830$
+\end{itemize}
+
+\textbf{Step 3}: Calculate the mean.
+\[
+\text{Mean} \, (\bar{x}) = \frac{\sum f_i x_i}{\sum f_i} = \frac{3830}{50} = 76.6
+\]
+
+\textbf{Result}: The mean test score is 76.6.
+
+\subsubsection*{Example 2: Grouped Data (Heights of Plants)}
+\textbf{Dataset}: The heights (in cm) of 40 plants are grouped as follows.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Height (cm)} & \textbf{Frequency} ($f_i$) \\
+\hline
+10--20 & 6 \\
+20--30 & 12 \\
+30--40 & 10 \\
+40--50 & 8 \\
+50--60 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Step 1}: Calculate the midpoint ($x_i$) for each class interval.
+\begin{itemize}
+    \item 10--20: $x_1 = \frac{10 + 20}{2} = 15$
+    \item 20--30: $x_2 = \frac{20 + 30}{2} = 25$
+    \item 30--40: $x_3 = \frac{30 + 40}{2} = 35$
+    \item 40--50: $x_4 = \frac{40 + 50}{2} = 45$
+    \item 50--60: $x_5 = \frac{50 + 60}{2} = 55$
+\end{itemize}
+
+\textbf{Step 2}: Multiply each midpoint by its frequency ($f_i x_i$) and sum the frequencies.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Height (cm)} & \textbf{Frequency} ($f_i$) & \textbf{Midpoint} ($x_i$) & $f_i x_i$ \\
+\hline
+10--20 & 6 & 15 & $6 \times 15 = 90$ \\
+20--30 & 12 & 25 & $12 \times 25 = 300$ \\
+30--40 & 10 & 35 & $10 \times 35 = 350$ \\
+40--50 & 8 & 45 & $8 \times 45 = 360$ \\
+50--60 & 4 & 55 & $4 \times 55 = 220$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item Total frequency ($\sum f_i$) = $6 + 12 + 10 + 8 + 4 = 40$
+    \item Sum of products ($\sum f_i x_i$) = $90 + 300 + 350 + 360 + 220 = 1320$
+\end{itemize}
+
+\textbf{Step 3}: Calculate the mean.
+\[
+\text{Mean} \, (\bar{x}) = \frac{\sum f_i x_i}{\sum f_i} = \frac{1320}{40} = 33
+\]
+
+\textbf{Result}: The mean height of the plants is 33 cm.
+
+\subsection*{Summary of Mean Calculations}
+
+\begin{itemize}
+    \item \textbf{Ungrouped Data}:
+    \[
+    \text{Mean} \, (\bar{x}) = \frac{\sum_{i=1}^{n}x_i}{n}
+    \]
+    \textbf{Example}: Scores: 85, 90, 75, 95, 80
+    \[
+    \text{Mean} = \frac{85 + 90 + 75 + 95 + 80}{5} = \frac{425}{5} = 85
+    \]
+
+    \item \textbf{Grouped Data}:
+    \[
+    \text{Mean} \, (\bar{x}) = \frac{\sum_{i=1}^{k}f_i x_i}{\sum_{i=1}^{k}f_i}
+    \]
+    \textbf{Example}: Test scores of 50 students:
+
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Class Interval} & \textbf{Frequency} ($f_i$) & \textbf{Midpoint} ($x_i$) & $f_i x_i$ \\
+    \hline
+    50--60 & 5 & 55 & 275 \\
+    60--70 & 10 & 65 & 650 \\
+    70--80 & 15 & 75 & 1125 \\
+    80--90 & 12 & 85 & 1020 \\
+    90--100 & 8 & 95 & 760 \\
+    \hline
+    \end{tabular}
+    \end{center}
+
+    \[
+    \text{Mean} = \frac{275 + 650 + 1125 + 1020 + 760}{5 + 10 + 15 + 12 + 8} = \frac{3830}{50} = 76.6
+    \]
+\end{itemize}
+
+\subsection*{Strengths of the Mean}
+
+\begin{enumerate}
+    \item \textbf{Uses All Data Values}:
+    \begin{itemize}
+        \item The mean incorporates every value in the dataset, making it a comprehensive summary of the data.
+        \item \textbf{Example (Ungrouped)}: In the scores 85, 90, 75, 95, 80, all values contribute to the mean (85), reflecting the overall performance.
+        \item \textbf{Example (Grouped)}: For the test scores, all class intervals and frequencies contribute to the mean (76.6), capturing the distribution across the entire range.
+    \end{itemize}
+
+    \item \textbf{Mathematical Simplicity and Utility}:
+    \begin{itemize}
+        \item The mean is easy to calculate and serves as a foundation for other statistical measures (e.g., variance, standard deviation).
+        \item It’s widely used in statistical analysis because of its algebraic properties (e.g., the sum of deviations from the mean is zero).
+        \item \textbf{Example}: The mean test score of 76.6 can be used to calculate the variance by finding deviations from this central value.
+    \end{itemize}
+
+    \item \textbf{Good for Symmetric Data}:
+    \begin{itemize}
+        \item The mean is an excellent measure of central tendency when the data is symmetric (e.g., follows a normal distribution) and has no extreme outliers.
+        \item \textbf{Example}: If test scores are symmetrically distributed around 76.6 with no extreme outliers, the mean accurately represents the typical score.
+    \end{itemize}
+
+    \item \textbf{Applicable to Both Ungrouped and Grouped Data}:
+    \begin{itemize}
+        \item The mean can be calculated for both raw (ungrouped) and summarized (grouped) data, making it versatile.
+        \item \textbf{Example}: We calculated the mean for ungrouped data (85) and grouped data (76.6), showing its adaptability.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Weaknesses of the Mean}
+
+\begin{enumerate}
+    \item \textbf{Sensitive to Outliers}:
+    \begin{itemize}
+        \item The mean is heavily influenced by extreme values, which can distort its representation of the “typical” value.
+        \item \textbf{Example (Ungrouped)}: Add an outlier to the scores: 85, 90, 75, 95, 80, \textbf{150}.
+        \[
+        \text{Mean} = \frac{85 + 90 + 75 + 95 + 80 + 150}{6} = \frac{575}{6} \approx 95.83
+        \]
+        The mean jumps from 85 to 95.83 due to the outlier (150), which may not reflect the typical student’s performance.
+        \item \textbf{Example (Grouped)}: If the grouped data had an additional interval like 150--160 with a frequency of 1, the mean would increase significantly, skewing the result.
+    \end{itemize}
+
+    \item \textbf{Not Suitable for Skewed Data}:
+    \begin{itemize}
+        \item In skewed distributions (e.g., income data with a few very high values), the mean may not represent the central tendency well.
+        \item \textbf{Example}: Consider incomes: \$30,000, \$40,000, \$50,000, \$1,000,000 (ungrouped).
+        \[
+        \text{Mean} = \frac{30,000 + 40,000 + 50,000 + 1,000,000}{4} = \frac{1,120,000}{4} = 280,000
+        \]
+        The mean (\$280,000) is far higher than most values due to the skewed distribution, making it misleading.
+    \end{itemize}
+
+    \item \textbf{Requires Numerical Data}:
+    \begin{itemize}
+        \item The mean cannot be calculated for categorical data (e.g., colors, names), limiting its applicability.
+        \item \textbf{Example}: You cannot calculate the mean of favorite colors: “red, blue, red, green.” The mean is only meaningful for numerical data like test scores or heights.
+    \end{itemize}
+
+    \item \textbf{Approximation Error in Grouped Data}:
+    \begin{itemize}
+        \item For grouped data, the mean relies on midpoints, assuming data is evenly distributed within each interval, which may not be true.
+        \item \textbf{Example (Grouped)}: In the test score example, the mean of 76.6 assumes scores in the 70--80 interval are centered at 75. If most scores in that interval are closer to 70, the mean may overestimate the average.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Weighted Mean}
+
+The \textbf{weighted mean} accounts for the importance (weight) of each value in a dataset. It’s useful when some values contribute more to the average than others.
+
+\textbf{Formula}:
+\[
+\text{Weighted Mean} \, (\bar{x}_w) = \frac{\sum_{i=1}^{n} w_i x_i}{\sum_{i=1}^{n} w_i}
+\]
+where $x_i$ are the data values, $w_i$ are the weights, and $n$ is the number of values.
+
+\textbf{Example}: Scores: 80, 90, 100 with weights 1, 2, 3.
+\[
+\bar{x}_w = \frac{(1 \times 80) + (2 \times 90) + (3 \times 100)}{1 + 2 + 3} = \frac{80 + 180 + 300}{6} = \frac{560}{6} \approx 93.33
+\]
+The weighted mean is approximately 93.33.
+
+\subsection{Trimmed Mean}
+
+The \textbf{trimmed mean} reduces the impact of outliers by removing a percentage of the smallest and largest values before calculating the mean.
+
+\textbf{Steps}:
+\begin{enumerate}
+    \item Sort the data in ascending order.
+    \item Trim the specified percentage (e.g., 10\%) from both ends.
+    \item Calculate the mean of the remaining values.
+\end{enumerate}
+
+\textbf{Example}: Dataset: 10, 20, 30, 90, 100 (5 values). Trim 20\% (1 value from each end).
+\begin{itemize}
+    \item Sorted: 10, 20, 30, 90, 100
+    \item Trimmed: 20, 30, 90
+    \item Mean: $\frac{20 + 30 + 90}{3} = \frac{140}{3} \approx 46.67$
+\end{itemize}
+The trimmed mean is approximately 46.67.
+
+
+\section{Median}
+
+The \textbf{median} is the middle value of a dataset when the data points are arranged in ascending order. It divides the dataset into two equal halves, with 50\% of the values below it and 50\% above it. The median is particularly useful because it is not affected by extreme values, making it a robust measure of central tendency.
+
+\subsection*{Formula for the Median}
+
+\begin{itemize}
+    \item \textbf{Ungrouped Data}:
+    \begin{itemize}
+        \item If $n$ (number of observations) is \textbf{odd}: The median is the value at position $\frac{n+1}{2}$.
+        \item If $n$ is \textbf{even}: The median is the average of the values at positions $\frac{n}{2}$ and $\frac{n}{2} + 1$.
+    \end{itemize}
+
+    \item \textbf{Grouped Data}:
+    The median for grouped data is found using the cumulative frequency and the median class (the class where the cumulative frequency reaches or exceeds $\frac{n}{2}$). The formula is:
+    \[
+    \text{Median} = L + \left( \frac{\frac{n}{2} - CF}{f} \right) \times h
+    \]
+    where:
+    \begin{itemize}
+        \item $L$ = lower boundary of the median class,
+        \item $n$ = total number of observations ($\sum f_i$),
+        \item $CF$ = cumulative frequency of the class before the median class,
+        \item $f$ = frequency of the median class,
+        \item $h$ = width of the median class interval.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Median for Ungrouped Data}
+
+Ungrouped data consists of individual data points listed separately. To find the median, we first arrange the data in ascending order and then apply the appropriate formula based on whether the number of observations is odd or even.
+
+\subsubsection*{Example 1: Ungrouped Data (Odd Number of Observations)}
+\textbf{Dataset}: Test scores of 7 students: 85, 90, 75, 95, 80, 88, 92
+
+\textbf{Step 1}: Arrange the data in ascending order.
+\begin{itemize}
+    \item Ordered dataset: 75, 80, 85, 88, 90, 92, 95
+    \item Number of observations ($n$) = 7 (odd)
+\end{itemize}
+
+\textbf{Step 2}: Find the median position.
+\begin{itemize}
+    \item Since $n$ is odd, the median is at position $\frac{n+1}{2}$.
+    \[
+    \frac{7+1}{2} = \frac{8}{2} = 4
+    \]
+\end{itemize}
+
+\textbf{Step 3}: Identify the value at the 4th position.
+\begin{itemize}
+    \item Ordered data: 75, 80, 85, \textbf{88}, 90, 92, 95
+    \item The 4th value is 88.
+\end{itemize}
+
+\textbf{Result}: The median test score is 88.
+
+\subsubsection*{Example 2: Ungrouped Data (Even Number of Observations)}
+\textbf{Dataset}: Number of books read by 6 students in a month: 2, 3, 5, 4, 3, 6
+
+\textbf{Step 1}: Arrange the data in ascending order.
+\begin{itemize}
+    \item Ordered dataset: 2, 3, 3, 4, 5, 6
+    \item Number of observations ($n$) = 6 (even)
+\end{itemize}
+
+\textbf{Step 2}: Find the median positions.
+\begin{itemize}
+    \item Since $n$ is even, the median is the average of the values at positions $\frac{n}{2}$ and $\frac{n}{2} + 1$.
+    \[
+    \frac{n}{2} = \frac{6}{2} = 3 \quad \text{and} \quad \frac{n}{2} + 1 = 3 + 1 = 4
+    \]
+\end{itemize}
+
+\textbf{Step 3}: Identify the values at the 3rd and 4th positions and compute their average.
+\begin{itemize}
+    \item Ordered data: 2, 3, \textbf{3}, \textbf{4}, 5, 6
+    \item 3rd value = 3, 4th value = 4
+    \item Median = $\frac{3 + 4}{2} = \frac{7}{2} = 3.5$
+\end{itemize}
+
+\textbf{Result}: The median number of books read is 3.5.
+
+\subsection{Median for Grouped Data}
+
+Grouped data is organized into class intervals with corresponding frequencies, often used for large datasets or continuous data. To find the median, we identify the median class using cumulative frequency and then apply the interpolation formula.
+
+\subsubsection*{Formula (Repeated for Clarity):}
+\[
+\text{Median} = L + \left( \frac{\frac{n}{2} - CF}{f} \right) \times h
+\]
+
+\subsubsection*{Example 1: Grouped Data (Test Scores)}
+\textbf{Dataset}: Test scores of 50 students, grouped into intervals.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Class Interval} & \textbf{Frequency} ($f_i$) \\
+\hline
+50--60 & 5 \\
+60--70 & 10 \\
+70--80 & 15 \\
+80--90 & 12 \\
+90--100 & 8 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Step 1}: Calculate the total frequency ($n$) and find $\frac{n}{2}$.
+\begin{itemize}
+    \item Total frequency ($n$) = $5 + 10 + 15 + 12 + 8 = 50$
+    \item $\frac{n}{2} = \frac{50}{2} = 25$
+\end{itemize}
+
+\textbf{Step 2}: Compute the cumulative frequency to identify the median class.
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Class Interval} & \textbf{Frequency} ($f_i$) & \textbf{Cumulative Frequency} \\
+\hline
+50--60 & 5 & 5 \\
+60--70 & 10 & 15 \\
+70--80 & 15 & 30 \\
+80--90 & 12 & 42 \\
+90--100 & 8 & 50 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item The median class is the interval where the cumulative frequency first reaches or exceeds $\frac{n}{2} = 25$. Here, the cumulative frequency reaches 30 at the 70--80 interval, so the median class is 70--80.
+\end{itemize}
+
+\textbf{Step 3}: Apply the median formula.
+\begin{itemize}
+    \item $L$ (lower boundary of the median class) = 70
+    \item $CF$ (cumulative frequency before the median class) = 15
+    \item $f$ (frequency of the median class) = 15
+    \item $h$ (class width) = $80 - 70 = 10$
+    \item $\frac{n}{2} = 25$
+\end{itemize}
+
+\[
+\text{Median} = L + \left( \frac{\frac{n}{2} - CF}{f} \right) \times h
+\]
+\[
+\text{Median} = 70 + \left( \frac{25 - 15}{15} \right) \times 10 = 70 + \left( \frac{10}{15} \right) \times 10 = 70 + \frac{10}{1.5} = 70 + 6.67 = 76.67
+\]
+
+\textbf{Result}: The median test score is approximately 76.67.
+
+\subsubsection*{Example 2: Grouped Data (Heights of Plants)}
+\textbf{Dataset}: Heights (in cm) of 40 plants, grouped as follows.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Height (cm)} & \textbf{Frequency} ($f_i$) \\
+\hline
+10--20 & 6 \\
+20--30 & 12 \\
+30--40 & 10 \\
+40--50 & 8 \\
+50--60 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Step 1}: Calculate the total frequency ($n$) and find $\frac{n}{2}$.
+\begin{itemize}
+    \item Total frequency ($n$) = $6 + 12 + 10 + 8 + 4 = 40$
+    \item $\frac{n}{2} = \frac{40}{2} = 20$
+\end{itemize}
+
+\textbf{Step 2}: Compute the cumulative frequency to identify the median class.
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Height (cm)} & \textbf{Frequency} ($f_i$) & \textbf{Cumulative Frequency} \\
+\hline
+10--20 & 6 & 6 \\
+20--30 & 12 & 18 \\
+30--40 & 10 & 28 \\
+40--50 & 8 & 36 \\
+50--60 & 4 & 40 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item The cumulative frequency reaches 28 at the 30--40 interval, which exceeds $\frac{n}{2} = 20$. So, the median class is 30--40.
+\end{itemize}
+
+\textbf{Step 3}: Apply the median formula.
+\begin{itemize}
+    \item $L$ (lower boundary of the median class) = 30
+    \item $CF$ (cumulative frequency before the median class) = 18
+    \item $f$ (frequency of the median class) = 10
+    \item $h$ (class width) = $40 - 30 = 10$
+    \item $\frac{n}{2} = 20$
+\end{itemize}
+
+\[
+\text{Median} = 30 + \left( \frac{20 - 18}{10} \right) \times 10 = 30 + \left( \frac{2}{10} \right) \times 10 = 30 + 0.2 \times 10 = 30 + 2 = 32
+\]
+
+\textbf{Result}: The median height of the plants is 32 cm.
+
+\subsection*{Strengths of the Median}
+
+\begin{enumerate}
+    \item \textbf{Robust to Outliers}:
+    \begin{itemize}
+        \item The median is not affected by extreme values, making it a better measure of central tendency for skewed datasets.
+        \item \textbf{Example (Ungrouped)}: Add an outlier to the scores: 75, 80, 85, 88, 90, 92, 95, \textbf{150}.
+        \begin{itemize}
+            \item Ordered data: 75, 80, 85, 88, 90, 92, 95, 150
+            \item $n = 8$, median = average of 4th and 5th values: $\frac{88 + 90}{2} = 89$
+            \item The median (89) is barely affected by the outlier (150), unlike the mean, which would increase significantly.
+        \end{itemize}
+        \item \textbf{Example (Grouped)}: If the test scores had an additional class like 150--160 with a small frequency, the median class would likely remain 70--80, keeping the median stable.
+    \end{itemize}
+
+    \item \textbf{Good for Skewed Data}:
+    \begin{itemize}
+        \item The median is ideal for datasets with skewed distributions (e.g., income, time to failure), where the mean might be misleading.
+        \item \textbf{Example}: Incomes: \$30,000, \$40,000, \$50,000, \$1,000,000.
+        \begin{itemize}
+            \item Ordered: \$30,000, \$40,000, \$50,000, \$1,000,000
+            \item Median = $\frac{40,000 + 50,000}{2} = 45,000$, which better represents the typical income than the mean (\$280,000).
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Applicable to Ordinal Data}:
+    \begin{itemize}
+        \item The median can be used with ordinal data (e.g., rankings, Likert scales) as long as the data can be ordered.
+        \item \textbf{Example}: Survey responses (1 = Poor, 2 = Fair, 3 = Good, 4 = Excellent): 1, 2, 3, 3, 4
+        \begin{itemize}
+            \item Ordered: 1, 2, 3, 3, 4
+            \item Median = 3 (Good), which is meaningful for ordinal data.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Simple to Understand and Calculate}:
+    \begin{itemize}
+        \item The concept of the “middle value” is intuitive, and the calculation is straightforward for ungrouped data.
+        \item \textbf{Example}: For the books dataset (2, 3, 3, 4, 5, 6), the median (3.5) is easily found by ordering and averaging the middle two values.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Weaknesses of the Median}
+
+\begin{enumerate}
+    \item \textbf{Ignores the Magnitude of Other Values}:
+    \begin{itemize}
+        \item The median only considers the middle value(s) and does not account for the magnitude of other data points, potentially losing information.
+        \item \textbf{Example (Ungrouped)}: In the scores 75, 80, 85, 88, 90, 92, 95, the median is 88, but it doesn’t reflect the spread or the actual values of the other scores.
+        \item \textbf{Example (Grouped)}: The median test score (76.67) doesn’t indicate how many students scored in the higher intervals like 90--100.
+    \end{itemize}
+
+    \item \textbf{Less Useful for Further Statistical Analysis}:
+    \begin{itemize}
+        \item Unlike the mean, the median lacks algebraic properties that make it useful for advanced statistical calculations (e.g., variance, standard deviation).
+        \item \textbf{Example}: You cannot directly use the median to calculate the variance of the test scores dataset; the mean is required for such computations.
+    \end{itemize}
+
+    \item \textbf{Approximation in Grouped Data}:
+    \begin{itemize}
+        \item For grouped data, the median relies on interpolation within the median class, assuming a uniform distribution within the interval, which may not be accurate.
+        \item \textbf{Example (Grouped)}: In the heights example, the median (32) assumes a linear distribution within the 30--40 interval, but if most heights are closer to 30, the true median might be lower.
+    \end{itemize}
+
+    \item \textbf{May Not Be Unique in Discrete Data}:
+    \begin{itemize}
+        \item In datasets with repeated values or discrete data, the median might not be a unique value, especially in even-sized datasets.
+        \item \textbf{Example}: Dataset: 1, 1, 2, 2
+        \begin{itemize}
+            \item Median = $\frac{1 + 2}{2} = 1.5$, which isn’t an actual data value, potentially making it less intuitive.
+        \end{itemize}
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Practical Notes}
+
+\begin{itemize}
+    \item Use the median when dealing with skewed data or datasets with outliers, as it provides a better representation of the “typical” value than the mean in such cases.
+    \item For grouped data, the median is an estimate due to the interpolation assumption, so interpret it with caution if the distribution within intervals is uneven.
+    \item The median is especially useful in fields like economics (e.g., median income) or real estate (e.g., median house price) where extreme values are common.
+\end{itemize}
+
+\section{Mode}
+
+The \textbf{mode} is the value or values that appear most frequently in a dataset. It represents the most common observation and is unique among measures of central tendency because a dataset can have no mode, one mode (unimodal), or multiple modes (bimodal or multimodal). The mode is particularly useful for identifying the most typical value in categorical or discrete data.
+
+\subsection*{Formula for the Mode}
+
+\begin{itemize}
+    \item \textbf{Ungrouped Data}:
+    \begin{itemize}
+        \item There is no explicit formula; the mode is simply the value(s) with the highest frequency.
+        \item Identify the value that appears most often in the dataset.
+    \end{itemize}
+
+    \item \textbf{Grouped Data}:
+    For grouped data, the mode is estimated using the modal class (the class interval with the highest frequency). The formula for the mode is:
+    \[
+    \text{Mode} = L + \left( \frac{f_m - f_1}{(f_m - f_1) + (f_m - f_2)} \right) \times h
+    \]
+    where:
+    \begin{itemize}
+        \item $L$ = lower boundary of the modal class,
+        \item $f_m$ = frequency of the modal class,
+        \item $f_1$ = frequency of the class before the modal class,
+        \item $f_2$ = frequency of the class after the modal class,
+        \item $h$ = width of the modal class interval.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Mode for Ungrouped Data}
+
+Ungrouped data consists of individual data points listed separately. To find the mode, we identify the value(s) that occur most frequently.
+
+\subsubsection*{Example 1: Ungrouped Data (Unimodal)}
+\textbf{Dataset}: Number of books read by 8 students in a month: 2, 3, 2, 5, 4, 3, 2, 6
+
+\textbf{Step 1}: List the data and count the frequency of each value.
+\begin{itemize}
+    \item 2 appears 3 times
+    \item 3 appears 2 times
+    \item 4 appears 1 time
+    \item 5 appears 1 time
+    \item 6 appears 1 time
+\end{itemize}
+
+\textbf{Step 2}: Identify the value with the highest frequency.
+\begin{itemize}
+    \item The value 2 appears 3 times, which is the highest frequency.
+\end{itemize}
+
+\textbf{Result}: The mode is 2.
+
+\subsubsection*{Example 2: Ungrouped Data (Bimodal)}
+\textbf{Dataset}: Test scores of 6 students: 85, 90, 85, 90, 88, 92
+
+\textbf{Step 1}: Count the frequency of each value.
+\begin{itemize}
+    \item 85 appears 2 times
+    \item 90 appears 2 times
+    \item 88 appears 1 time
+    \item 92 appears 1 time
+\end{itemize}
+
+\textbf{Step 2}: Identify the value(s) with the highest frequency.
+\begin{itemize}
+    \item Both 85 and 90 appear 2 times, which is the highest frequency.
+\end{itemize}
+
+\textbf{Result}: The dataset is bimodal, with modes 85 and 90.
+
+\subsubsection*{Example 3: Ungrouped Data (No Mode)}
+\textbf{Dataset}: Heights of 5 people (in cm): 160, 165, 170, 175, 180
+
+\textbf{Step 1}: Count the frequency of each value.
+\begin{itemize}
+    \item 160 appears 1 time
+    \item 165 appears 1 time
+    \item 170 appears 1 time
+    \item 175 appears 1 time
+    \item 180 appears 1 time
+\end{itemize}
+
+\textbf{Step 2}: Identify the value(s) with the highest frequency.
+\begin{itemize}
+    \item All values appear exactly once, so there is no value that stands out as the most frequent.
+\end{itemize}
+
+\textbf{Result}: There is no mode for this dataset.
+
+\subsection{Mode for Grouped Data}
+
+Grouped data is organized into class intervals with corresponding frequencies, often used for large or continuous datasets. To find the mode, we identify the modal class (the class with the highest frequency) and use the formula to estimate the mode within that class.
+
+\subsubsection*{Formula (Repeated for Clarity):}
+\[
+\text{Mode} = L + \left( \frac{f_m - f_1}{(f_m - f_1) + (f_m - f_2)} \right) \times h
+\]
+
+\subsubsection*{Example 1: Grouped Data (Test Scores)}
+\textbf{Dataset}: Test scores of 50 students, grouped into intervals.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Class Interval} & \textbf{Frequency} ($f_i$) \\
+\hline
+50--60 & 5 \\
+60--70 & 10 \\
+70--80 & 15 \\
+80--90 & 12 \\
+90--100 & 8 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Step 1}: Identify the modal class.
+\begin{itemize}
+    \item The highest frequency is 15, which corresponds to the 70--80 interval.
+    \item Modal class = 70--80
+\end{itemize}
+
+\textbf{Step 2}: Apply the mode formula.
+\begin{itemize}
+    \item $L$ (lower boundary of the modal class) = 70
+    \item $f_m$ (frequency of the modal class) = 15
+    \item $f_1$ (frequency of the class before) = 10 (60--70)
+    \item $f_2$ (frequency of the class after) = 12 (80--90)
+    \item $h$ (class width) = $80 - 70 = 10$
+\end{itemize}
+
+\[
+\text{Mode} = 70 + \left( \frac{15 - 10}{(15 - 10) + (15 - 12)} \right) \times 10
+\]
+\[
+= 70 + \left( \frac{5}{5 + 3} \right) \times 10 = 70 + \left( \frac{5}{8} \right) \times 10 = 70 + 0.625 \times 10 = 70 + 6.25 = 76.25
+\]
+
+\textbf{Result}: The mode of the test scores is approximately 76.25.
+
+\subsubsection*{Example 2: Grouped Data (Heights of Plants)}
+\textbf{Dataset}: Heights (in cm) of 40 plants, grouped as follows.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Height (cm)} & \textbf{Frequency} ($f_i$) \\
+\hline
+10--20 & 6 \\
+20--30 & 12 \\
+30--40 & 10 \\
+40--50 & 8 \\
+50--60 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Step 1}: Identify the modal class.
+\begin{itemize}
+    \item The highest frequency is 12, which corresponds to the 20--30 interval.
+    \item Modal class = 20--30
+\end{itemize}
+
+\textbf{Step 2}: Apply the mode formula.
+\begin{itemize}
+    \item $L$ (lower boundary of the modal class) = 20
+    \item $f_m$ (frequency of the modal class) = 12
+    \item $f_1$ (frequency of the class before) = 6 (10--20)
+    \item $f_2$ (frequency of the class after) = 10 (30--40)
+    \item $h$ (class width) = $30 - 20 = 10$
+\end{itemize}
+
+\[
+\text{Mode} = 20 + \left( \frac{12 - 6}{(12 - 6) + (12 - 10)} \right) \times 10
+\]
+\[
+= 20 + \left( \frac{6}{6 + 2} \right) \times 10 = 20 + \left( \frac{6}{8} \right) \times 10 = 20 + 0.75 \times 10 = 20 + 7.5 = 27.5
+\]
+
+\textbf{Result}: The mode of the plant heights is 27.5 cm.
+
+\subsection*{Strengths of the Mode}
+
+\begin{enumerate}
+    \item \textbf{Useful for Categorical Data}:
+    \begin{itemize}
+        \item The mode is the only measure of central tendency that can be used with categorical (non-numerical) data, such as colors, names, or preferences.
+        \item \textbf{Example}: Favorite colors of 10 people: red, blue, red, green, red.
+        \begin{itemize}
+            \item Mode = red (appears 3 times), which is meaningful for categorical data.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Not Affected by Extreme Values}:
+    \begin{itemize}
+        \item The mode is robust to outliers since it only depends on frequency, not the magnitude of the values.
+        \item \textbf{Example (Ungrouped)}: Add an outlier to the books dataset: 2, 3, 2, 5, 4, 3, 2, \textbf{50}.
+        \begin{itemize}
+            \item The mode remains 2 (appears 3 times), unaffected by the outlier 50.
+        \end{itemize}
+        \item \textbf{Example (Grouped)}: If the test scores had an additional class like 150--160 with a frequency of 1, the modal class (70--80) and the mode (76.25) would remain unchanged.
+    \end{itemize}
+
+    \item \textbf{Reflects the Most Common Value}:
+    \begin{itemize}
+        \item The mode directly identifies the most frequent or typical value, which is useful in fields like marketing or sociology.
+        \item \textbf{Example}: In the books dataset, the mode (2) indicates that most students read 2 books, providing insight into common behavior.
+    \end{itemize}
+
+    \item \textbf{Simple to Identify in Ungrouped Data}:
+    \begin{itemize}
+        \item For ungrouped data, the mode is easy to determine by counting frequencies, requiring no complex calculations.
+        \item \textbf{Example}: In the test scores 85, 90, 85, 90, 88, 92, the modes (85 and 90) are quickly identified by observing frequencies.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Weaknesses of the Mode}
+
+\begin{enumerate}
+    \item \textbf{May Not Exist or Be Unique}:
+    \begin{itemize}
+        \item A dataset may have no mode (if all values occur equally often) or multiple modes (bimodal or multimodal), which can make it less definitive.
+        \item \textbf{Example (Ungrouped)}: Heights 160, 165, 170, 175, 180 have no mode (all frequencies are 1).
+        \item \textbf{Example (Ungrouped)}: Test scores 85, 90, 85, 90, 88, 92 are bimodal (modes 85 and 90), which may complicate interpretation.
+    \end{itemize}
+
+    \item \textbf{Ignores the Distribution of Other Values}:
+    \begin{itemize}
+        \item The mode only focuses on the most frequent value(s) and does not consider the overall distribution or magnitude of other data points.
+        \item \textbf{Example (Ungrouped)}: In the books dataset (2, 3, 2, 5, 4, 3, 2), the mode is 2, but it doesn’t reflect the presence of higher values like 5 or 6.
+        \item \textbf{Example (Grouped)}: The mode of the test scores (76.25) doesn’t indicate the spread of scores in other intervals like 90--100.
+    \end{itemize}
+
+    \item \textbf{Less Useful for Continuous Data}:
+    \begin{itemize}
+        \item In continuous datasets, exact repeated values are rare, so the mode is often estimated (as in grouped data), which may not be precise.
+        \item \textbf{Example (Grouped)}: The mode of the plant heights (27.5) is an estimate based on the modal class, but the actual most common height may differ slightly due to the assumption of uniform distribution within the interval.
+    \end{itemize}
+
+    \item \textbf{Not Suitable for Further Statistical Analysis}:
+    \begin{itemize}
+        \item The mode lacks algebraic properties, making it less useful for advanced statistical calculations like variance or regression.
+        \item \textbf{Example}: You cannot use the mode (76.25) of the test scores to directly calculate the variance; the mean is required for such computations.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Practical Notes}
+
+\begin{itemize}
+    \item Use the mode when you need to identify the most frequent or typical value, especially in categorical data (e.g., most popular product, most common response).
+    \item For grouped data, the mode is an estimate based on the modal class, so interpret it with caution if the distribution within intervals is uneven.
+    \item The mode is particularly valuable in fields like market research (e.g., most common shoe size) or sociology (e.g., most frequent age group), but it’s less informative for continuous or highly variable data.
+\end{itemize}
+
+\end{document}
