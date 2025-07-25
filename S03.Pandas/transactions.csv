@@ -1,0 +1,6 @@
+CustomerID,TransactionDate,ProductCategory,Quantity,UnitPrice,TotalSpend,CustomerSegment,Region
+C001,2025-01-01,Electronics,2.0,100.0,200.0,Premium,North
+C002,2025-01-02,Clothing,1.0,50.0,50.0,Regular,South
+C003,2025-01-03,Books,3.0,20.0,60.0,Regular,East
+C004,,Electronics,4.0,150.0,600.0,Premium,West
+C005,2025-01-05,Clothing,,60.0,,Regular,North
