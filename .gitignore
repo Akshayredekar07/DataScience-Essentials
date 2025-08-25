@@ -1,2 +1,24 @@
 /EdgeDSML
 Web Scrapping/web_scraps/API_Data_Feteching/Rapid_API.ipynb
+
+# ingore api keys
+.env
+
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv
+
+.lens
+
+
+# Ignore Chainlit files
+.chainlit/
+chainlit_config.py
+
+
+# Ignore Selenium related files
+selenium/
+selenium_logs/
