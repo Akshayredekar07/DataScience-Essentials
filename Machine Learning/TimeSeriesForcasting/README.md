@@ -1,5 +1,7 @@
 
-# **Time Series Forecasting**
+<div class="alert alert-info">
+
+## **Time Series Forecasting**
 
 
 ### **Problem Statement**
@@ -279,3 +281,5 @@ A time series is **stationary** if:
 * Stationarity (ADF, differencing)
 * ACF/PACF
 * ARIMA
+
+</div>
