@@ -1,4 +1,4 @@
-/EdgeDSML
+
 Web Scrapping/web_scraps/API_Data_Feteching/Rapid_API.ipynb
 
 # ingore api keys
@@ -22,3 +22,5 @@ chainlit_config.py
 # Ignore Selenium related files
 selenium/
 selenium_logs/
+Machine Learning/TimeSeriesForcasting/AdEaseData/
+Machine Learning/TimeSeriesForcasting/data/

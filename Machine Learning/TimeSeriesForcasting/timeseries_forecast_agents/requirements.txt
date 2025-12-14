@@ -1,0 +1,20 @@
+# LangGraph core
+langgraph>=0.0.40
+
+# LangChain + Ollama integration
+langchain>=0.1.20
+langchain_ollama>=0.1.0
+
+# Time series modeling
+prophet>=1.1.5
+
+# Data manipulation & evaluation
+pandas>=2.1.4
+scikit-learn>=1.3.0
+numpy>=1.24.4
+
+# JSON parsing and datetime
+python-dateutil>=2.8.2
+
+# Optional: if you use tqdm/logging
+tqdm

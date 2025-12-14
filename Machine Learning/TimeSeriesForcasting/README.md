@@ -283,3 +283,15 @@ A time series is **stationary** if:
 * ARIMA
 
 </div>
+
+
+
+https://mrmaheshrajput.medium.com/neural-networks-and-llms-for-time-series-forecasting-db604e6bbf2e
+
+https://medium.com/@aditib259/predicting-stock-prices-using-lstms-time-series-forecasting-a-step-by-step-guide-a70ebb04bbb8
+
+https://medium.com/data-science-collective/mastering-time-series-forecasting-with-lightgbm-a-practical-guide-2dff8d1a72bb
+
+https://freedium.cfd/https://medium.com/code-applied/the-one-tool-you-need-to-master-time-series-forecasting-bedf0fb2264d 
+
+https://freedium.cfd/https://ai.plainenglish.io/when-llms-meet-crypto-time-series-build-a-tsaia-style-agent-for-btc-that-actually-respects-8ef865f15b8ds
